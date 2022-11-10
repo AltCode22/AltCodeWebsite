@@ -1,0 +1,140 @@
+import "./App.css";
+import React, { useEffect, useState } from "react";
+import Navbar from "./Navbar";
+
+function Header(props) {
+  return (
+    <div>
+      <h1 className="text-3xl font-bold underline">
+        Full Stack Development Roadmap- {props.year}
+      </h1>
+    </div>
+  );
+}
+
+/* (using Lists Mapping Type 2)
+
+  <ul>
+    {courses.map((course, i) => (
+      <li key={i}>{course}</li>
+    ))}
+  </ul>
+
+*/
+
+//using Lists in React using map function
+const courses = [
+  "HTML",
+  "CSS",
+  "JavaScript",
+  "React JS",
+  "NodeJS",
+  "Web Animations",
+  "MongoDB",
+  "Mongoose",
+];
+
+//performing data transformation (using Lists Mapping Type 1)
+const courseListObjects = courses.map((course, i) => ({
+  id: i,
+  title: course,
+}));
+
+function Main(props) {
+  const [checked, setChecked] = useState(false);
+
+  return (
+    <div className="items-center">
+      <img
+        className="object-fill w-40 h-120"
+        src="https://images.pexels.com/photos/5483077/pexels-photo-5483077.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+        alt="Coding on PC"
+      />
+      <ul>
+        {props.courses.map((course) => (
+          <li key={course.id}>{course.title}</li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+export function Form() {
+  const [title, setTitle] = useState("");
+  const [color, setColor] = useState("#000000");
+
+  //prevents the user from refreshing the page
+  const submit = (e) => {
+    e.preventDefault();
+    alert(`${title}, ${color}`);
+
+    setTitle(""); //clear the inputs
+  };
+
+  return (
+    <div>
+      <form onSubmit={submit}>
+        <input
+          value={title}
+          onChange={(event) => setTitle(event.target.value)}
+          type="text"
+          placeholder="color title..."
+        />
+        <input
+          value={color}
+          onChange={(event) => setColor(event.target.value)}
+          type="color"
+        />
+        <button>Add</button>
+      </form>
+    </div>
+  );
+}
+
+export function GithubUser({ name, location, bio, avatar }) {
+  return (
+    <div className="bg-green-200 w-100 h-100">
+      <h1 className="text-3xl font-bold">{name}</h1>
+      <h2 className="text-2xl font-bold">{bio}</h2>
+      <p className="font-bold">{location}</p>
+      <img src={avatar} className="rounded w-20 h-20" alt="user_img" />
+    </div>
+  );
+}
+
+//Footer component
+function Footer(props) {
+  return (
+    <div>
+      <p>&copy; Made with Love by- {props.author}</p>
+    </div>
+  );
+}
+
+function App() {
+  //container for data
+  const [data, setData] = useState(null); //initial state is null
+
+  useEffect(() => {
+    fetch(`https://api.github.com/users/tarunsinghofficial`)
+      .then((response) => response.json())
+      .then(setData);
+  }, []); //request for data is only once when app is rendered
+
+  return (
+    <div className="App">
+      <Navbar />
+      <Header year={new Date().getFullYear()} />
+      <Main courses={courseListObjects} />
+      <GithubUser
+        name={data.name}
+        bio={data.bio}
+        location={data.location}
+        avatar={data.avatar_url}
+      />
+      <Footer author="Tarun Singh" />
+    </div>
+  );
+}
+
+export default App;
