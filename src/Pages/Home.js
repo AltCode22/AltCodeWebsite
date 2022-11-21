@@ -7,13 +7,13 @@ function Home() {
   return (
     <>
       <Helmet>
-        <title>Home | Tarun Singh</title>
+        <title>Home | AltCode</title>
       </Helmet>
       <div class="bg-white dark:bg-black p-8 h-screen">
         <section class="grid max-w-screen-xxl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
           <div class="mr-auto place-self-center lg:col-span-8">
             <h1 class="max-w-3xl mb-4 text-5xl font-google font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl text-black dark:text-white">
-              Hi👋, I'm Tarun Singh 
+              Hi👋, I'm AltCode 
             </h1>
             <p class="max-w-2xl mb-6 font-light text-gray-500 dark:text-gray-200 lg:mb-8 md:text-xl lg:text-2xl">
               Software Developer, Technical Writer, YouTuber, and a

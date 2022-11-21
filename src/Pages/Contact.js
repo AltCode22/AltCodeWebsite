@@ -5,7 +5,7 @@ function Contact() {
   return (
     <>
       <Helmet>
-        <title>Contact | Tarun Singh</title>
+        <title>Contact | AltCode</title>
       </Helmet>
       <div className="bg-white dark:bg-black">
         <div className="flex items-center justify-center">
