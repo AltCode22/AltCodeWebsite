@@ -6,11 +6,11 @@ function About() {
   return (
     <>
     <Helmet>
-      <title>About | Tarun Singh</title>
+      <title>About | AltCode</title>
     </Helmet>
     <div className="bg-white dark:bg-black">
       <div className="flex items-center justify-center">
-        <h1 className="text-5xl font-bold text-blue">About Me</h1>
+        <h1 className="text-5xl font-bold text-blue">About AltCode</h1>
       </div>
       <div className="container mx-auto sm:px-2 md:px-2 mt-10">
         <p className="text-2xl font-mono dark:text-white">

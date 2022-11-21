@@ -6,17 +6,17 @@ function Navbar() {
   return (
     <nav className="bg-white dark:bg-black p-4 text-blue font-bold font-mono text-2xl flex justify-between">
       <Link to="/">
-        <h2 className="text-2xl font-mono">Tarun Singh</h2>
+        <h2 className="text-2xl font-mono">AltCode</h2>
       </Link>
       <ul className="flex space-x-8">
         <li>
-          <Link to="/">Home</Link>
+          <Link to="/">Who we are</Link>
         </li>
         <li>
           <Link to="/about">What we do</Link>
         </li>
         <li>
-          <Link to="/projects">Projects</Link>
+          <Link to="/projects">Career</Link>
         </li>
         <li>
           <Link to="/contact">Contact</Link>
