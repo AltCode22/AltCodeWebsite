@@ -20,7 +20,7 @@ function Home() {
                 passionate learner. I am currently writing various Technical
                 Articles at
               <span className="bg-blue text-white px-1 rounded ml-2">
-                GeeksforGeeks
+                AltCode
               </span>
             </p>
             <Link
