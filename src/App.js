@@ -1,12 +1,15 @@
 import "./App.css";
 import React from "react";
-import Navbar from "./Components/Navbar";
 import { Routes, Route } from "react-router-dom";
+
+import Navbar from "../src/Components/Navbar"
+
 import Home from "./Pages/Home";
 import About from "./Pages/About";
-import Projects from "./Pages/Projects";
+import Courses from "./Pages/Courses";
+import Blog from "./Pages/Blog";
+import Careers from "./Pages/Careers";
 import Contact from "./Pages/Contact";
-import Footer from "./Components/Footer";
 
 function App() {
   return (
@@ -14,13 +17,12 @@ function App() {
       <Navbar />
       <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/about" element={<About />} />
-      <Route path="/projects" element={<Projects />} />
+      <Route path="/whoweare" element={<About />} />
+      <Route path="/courses" element={<Courses />} />
+      <Route path="/blog" element={<Blog />} />
+      <Route path="/career" element={<Careers />} />
       <Route path="/contact" element={<Contact />} />
-    </Routes>
-    <div className="w-full bottom-0">
-      <Footer />
-    </div>
+      </Routes>
     </div>
   );
 }
