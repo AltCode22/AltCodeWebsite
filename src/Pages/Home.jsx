@@ -10,7 +10,7 @@ const Home = () => {
             Welcome to <span className="text-blue">Alt Code</span>
           </h1>
           <p class="max-w-2xl mb-6 text-gray-500 lg:mb-8 md:text-lg lg:text-2xl dark:text-gray-400">
-            #Aar mai
+            #Aar ya par
           </p>
           <a
             href="#dd"
